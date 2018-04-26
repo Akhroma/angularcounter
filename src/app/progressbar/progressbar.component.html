@@ -1,0 +1,26 @@
+<div class="ui segment">
+    <sui-progress class="top attached green active" maximum="60" [value]="datavar" [autoSuccess]="true"></sui-progress>
+    <sui-progress class="indicating" maximum="100" [(value)]="valorEarned">Earned Today R${{valorEarned}}</sui-progress>
+    <sui-progress class="active" maximum="24" [(value)]="datavar2">Day </sui-progress>
+    <sui-progress class="warning" [(value)]="counterValue">Time Worked</sui-progress>
+    <sui-progress class="error" [(value)]="counterValue">Day</sui-progress>
+
+
+    <!-- <h3>{{datavar}}{{vHora}}{{valorHora}}</h3> -->
+
+
+    <sui-progress class="tiny" [(value)]="counterValue">Month</sui-progress>
+    <!-- <sui-progress class="bottom attached indicating active" [(value)]="counterValue"></sui-progress> -->
+</div>
+
+<div>{{valorEarned}}</div>
+<div>{{valorHora}}</div>
+
+
+
+
+
+
+<button (click)="decrement()">-</button>
+<span>{{valorHora}}</span>
+<button (click)="increment()">+</button>

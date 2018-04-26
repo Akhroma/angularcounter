@@ -1,0 +1,43 @@
+<div class="ui segments">
+    <div class="ui segment">
+        <p>Single Select (with <code>selection</code> class applied)</p>
+        <sui-select class="selection"
+                    [(ngModel)]="selectedOption"
+                    [options]="options"
+                    labelField="name"
+                    [isSearchable]="searchable"
+                    [isDisabled]="disabled"
+                    #select>
+            <sui-select-option *ngFor="let option of select.filteredOptions"
+                               [value]="option">
+            </sui-select-option>
+        </sui-select>
+    </div>
+    <div class="ui segment">
+        <p>Multi Select (with <code>selection</code> class applied)</p>
+        <sui-multi-select class="selection"
+                          [(ngModel)]="selectedOptions"
+                          [options]="options"
+                          labelField="name"
+                          [isSearchable]="searchable"
+                          [isDisabled]="disabled"
+                          [hasLabels]="!hideLabels"
+                          #multiSelect>
+            <sui-select-option *ngFor="let option of multiSelect.filteredOptions"
+                               [value]="option">
+            </sui-select-option>
+        </sui-multi-select>
+        <br><br>
+        <sui-checkbox [(ngModel)]="hideLabels">Hide labels?</sui-checkbox>
+    </div>
+    <div class="ui segment">
+        <sui-checkbox [(ngModel)]="searchable">Searchable?</sui-checkbox>
+        <br>
+        <sui-checkbox [(ngModel)]="disabled">Disabled?</sui-checkbox>
+        
+    </div>
+    <div class="ui segment">
+        <p>Singly selected: {{ selectedOption | json }}</p>
+        <p>Multi selected: {{ selectedOptions | json }}</p>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div>
+
+
+
+
+
+    <div>
+        <p>Value</p>
+    </div>
+
+    <div class="ui input">
+        <input type="text" [(ngModel)]="valorHora" placeholder="10">
+        <button class="ui secondary button" (click)="atualizar($event)">Set</button>
+    </div>
+    <br>
+    <br>
+
+    <div>
+        <p>Starting Point</p>
+    </div>
+
+    <div class="ui input focus">
+        <input class="tuiTextField tuiTextField--date" id="from" [(ngModel)]="values" placeholder="From" value="14/10/1988" type="date">
+
+
+
+
+    </div>
+    <div>
+        <p>{{values}}</p>
+    </div>
+    <div class="ui segments">
+
+
+        <p>Starting Time</p>
+        <sui-select class="selection" [(ngModel)]="value" [options]="options2" #select>
+            <sui-select-option *ngFor="let options2 of select.filteredOptions" [value]="options2.ss">
+            </sui-select-option>
+        </sui-select>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="ui segment">
+        <p>V/H: {{ VH | json }}</p>
+        <p> {{ selectedOptions | json }}</p>
+    </div>
+
+    {{valor}} {{valorHora}}
+</div>
